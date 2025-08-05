@@ -21,9 +21,9 @@ You'll need Python 3.12+ installed.
 Seriously, if you haven't tried [uv](https://docs.astral.sh/uv/) yet, you're missing out. It's absurdly fast and will change how you think about Python package management.
 
 
+```bash
 # Install uv if you don't have it (It's okay to install it on your base Python installation, trust me....)
 pip install uv
-
 
 # Option 1: Run directly (handles everything automatically)
 uv sync
@@ -32,11 +32,13 @@ uv run app.py
 # Option 2: Traditional approach
 uv sync
 python app.py
+```
 
 
 ### With pip (if you must)
 
 
+```bash
 # Create virtual environment
 python -m venv .venv
 
@@ -53,13 +55,14 @@ pip install -r requirements.txt
 
 # Start the server
 python app.py
+```
 
 
 Open http://localhost:7860 in your browser.
 
 ## Project structure
 
-
+```
 ├── src/pickleball/
 │   └── main.py              # FastAPI backend
 ├── data/
@@ -69,6 +72,7 @@ Open http://localhost:7860 in your browser.
 ├── static/
 │   └── index.html          # Frontend
 └── app.py                  # Entry point
+```
 
 
 ## API endpoints
@@ -133,10 +137,12 @@ The machine learning pipeline is implemented in `notebooks/model_building.ipynb`
 
 **4. Model Evaluation:**
 
+```
 Accuracy: 85.2%
 Precision: 0.87 (Player 1), 0.83 (Player 2)  
 Recall: 0.84 (Player 1), 0.86 (Player 2)
 F1-Score: 0.85 (Player 1), 0.84 (Player 2)
+```
 
 
 **5. Model Persistence:**
@@ -144,11 +150,13 @@ The trained model is saved as `data/pickleball_model.joblib` for fast loading in
 
 **Reproducing Results:**
 
+```bash
 # Generate new synthetic dataset (optional)
 jupyter notebook notebooks/pickleball_dataset.ipynb
 
 # Train the model from scratch
 jupyter notebook notebooks/model_building.ipynb
+```
 
 
 ## Deployment
