@@ -180,6 +180,20 @@ The app should work on most Python hosting platforms (Railway, Render, etc.) sin
 - Mobile-responsive design needs work
 
 
+## Live Demo
+
+🎾 **Try the app live:** [https://huggingface.co/spaces/HafizRein/pickleball-match-predictor](https://huggingface.co/spaces/HafizRein/pickleball-match-predictor)
+
+The demo is fully functional - select two players, adjust match conditions, and get real-time predictions!
+
 ## Architecture
 
 Pretty straightforward setup - the frontend calls the FastAPI backend, which loads the trained model and returns predictions. Player data and match history are stored in CSV files for simplicity.
+
+## Reflection
+
+Building this was honestly pretty fun! I got to play around with the full ML pipeline - from generating fake (but realistic) data to deploying a working app that people can actually use. The trickiest part was probably getting the synthetic data to feel believable without being too predictable.
+
+If I were building this for actual pickleball tournaments, I'd definitely want real match data first (obviously). The synthetic approach worked great for learning, but nothing beats the messiness of real-world data. I'd also love to add stuff like recent player form, head-to-head records, maybe even court surface preferences - there's so much that goes into sports predictions beyond just rankings.
+
+The architecture is pretty simple right now, which I like. FastAPI makes it super easy to add new features, and the whole thing could scale up nicely if you wanted to integrate with live tournament feeds or build analytics dashboards for coaches. Plus, uv makes dependency management actually enjoyable (seriously, try it if you haven't!).
